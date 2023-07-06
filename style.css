@@ -37,7 +37,7 @@ body * {
 
 #container {
   width: 100%;
-  max-width: 588;
+  max-width: 588px;
   height: 712px;
   margin: 56px auto 0px;
 }
@@ -64,11 +64,11 @@ body * {
 
   left: 8px;
   transform-origin: 16px 16px;
+  animation: slide-out .2s;
 }
 
 .light #switch button {
-  left: initial;
-  right: 8px;
+  animation: slide-in .2s forwards;
 }
 
 #switch button:hover {
@@ -168,5 +168,21 @@ footer {
 @media (min-height: 768px) {
   body {
     background-size: 100vw 100vh;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 8px;
+  } to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  } to {
+    left: 8px;
   }
 }
